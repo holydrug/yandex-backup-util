@@ -2,10 +2,36 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>org.example</groupId>
+  <groupId>com.amogus</groupId>
   <artifactId>yandex-backup-util</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
+
+  <name>yandex-backup-util</name>
+  <description>Tool to easy and fast upload files to yandex disk</description>
+  <url>https://github.com/holydrug/</url>
+  <licenses>
+    <license>
+      <name>The MIT License</name>
+      <url>https://github.com/holydrug/yandex-backup-util/blob/master/LICENSE</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+  <developers>
+    <developer>
+      <id>holydrug</id>
+      <name>Sergey Popov Romanovich</name>
+      <email>nonprofitxzbusiness@gmail.com</email>
+      <url>https://github.com/holydrug</url>
+    </developer>
+  </developers>
+  <scm>
+    <url>https://github.com/holydrug/yandex-backup-util</url>
+    <connection>scm:git:git://github.com/holydrug/yandex-backup-util.git</connection>
+    <developerConnection>scm:git:ssh://github.com:holydrug/yandex-backup-util.git</developerConnection>
+    <tag>HEAD</tag>
+  </scm>
+
 
   <properties>
     <java.version>21</java.version>
@@ -14,8 +40,6 @@
     <maven.compiler.target>21</maven.compiler.target>
 
   </properties>
-
-  <name>yandex-backup-util</name>
 
   <dependencies>
     <dependency>
