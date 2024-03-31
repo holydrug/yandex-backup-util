@@ -24,7 +24,6 @@
       <version>5.10.2</version>
       <scope>test</scope>
     </dependency>
-
   </dependencies>
 
   <build>
