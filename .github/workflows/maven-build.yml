@@ -11,3 +11,7 @@ jobs:
 
       - name: Build with Maven
         run: mvn clean install --settings ~/creds/settings.xml
+
+      - name: Deploy with Maven
+        if: success()
+        run: mvn deploy --settings ~/creds/settings.xml
