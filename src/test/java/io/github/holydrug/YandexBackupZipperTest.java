@@ -1,4 +1,4 @@
-package com.amogus;
+package io.github.holydrug;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -9,7 +9,6 @@ import java.nio.file.Path;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-import static com.amogus.YandexBackupZipper.ARCHIVE_NAME;
 import static java.lang.String.format;
 import static java.nio.file.Files.createDirectories;
 import static java.nio.file.Files.createFile;
@@ -27,7 +26,7 @@ class YandexBackupZipperTest {
 
     @Test
     void shouldFindZipFile(@TempDir Path tempDir) throws Exception {
-        String archiveName = format(ARCHIVE_NAME, LocalDate.now().format(DateTimeFormatter.BASIC_ISO_DATE));
+        String archiveName = String.format(YandexBackupZipper.ARCHIVE_NAME, LocalDate.now().format(DateTimeFormatter.BASIC_ISO_DATE));
         Path sourceFolderPath = tempDir.resolve("folder");
         createDirectories(sourceFolderPath);
         createFile(sourceFolderPath.resolve(TEST_FILE_NAME));

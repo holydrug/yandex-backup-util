@@ -1,4 +1,4 @@
-package com.amogus;
+package io.github.holydrug;
 
 import java.io.IOException;
 import java.nio.file.FileVisitResult;
