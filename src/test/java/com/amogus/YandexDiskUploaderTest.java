@@ -11,10 +11,8 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 import static com.amogus.YandexBackupZipper.ARCHIVE_NAME;
-import static java.lang.String.format;
-import static java.nio.file.Files.createDirectories;
-import static java.nio.file.Files.createFile;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class YandexDiskUploaderTest {
     private static final String TEST_FILE_NAME = "testFile.txt";
@@ -33,19 +31,21 @@ class YandexDiskUploaderTest {
 
     @Test
     void uploadBackupToYandexDisk(@TempDir Path tempDir) throws Exception {
-        createTestZip(tempDir);
+        Path testZip = createTestZip(tempDir);
 
-        underTest.uploadBackupToYandexDisk(tempDir.toAbsolutePath().toString(), "/help", testToken);
+        underTest.uploadBackupToYandexDisk(testZip.toString(), "/help", testToken);
     }
 
-    private void createTestZip(Path tempDir) throws IOException {
-        String archiveName = format(ARCHIVE_NAME, LocalDate.now().format(DateTimeFormatter.BASIC_ISO_DATE));
-        Path sourceFolderPath = tempDir.resolve(archiveName);
-        createDirectories(sourceFolderPath);
-        createFile(sourceFolderPath.resolve(TEST_FILE_NAME));
-        var zipPath = tempDir.resolve(archiveName);
-        zipper.zipFolder(sourceFolderPath, zipPath);
+    private Path createTestZip(Path tempDir) throws IOException {
+        String archiveName = String.format(ARCHIVE_NAME, LocalDate.now().format(DateTimeFormatter.BASIC_ISO_DATE));
+        Path sourceFolderPath = tempDir.resolve("sourceFolder"); // Создайте исходную папку
+        Files.createDirectories(sourceFolderPath);
+        Files.createFile(sourceFolderPath.resolve(TEST_FILE_NAME));
+        Path zipFilePath = tempDir.resolve(archiveName); // Путь к файлу архива, уже с расширением
 
-        assertTrue(Files.exists(zipPath), "Zip-файл не был создан.");
+        Path zip = zipper.zipFolder(sourceFolderPath, zipFilePath);
+
+        assertTrue(Files.exists(zipFilePath), "Zip-файл не был создан.");
+        return zip;
     }
 }
