@@ -9,20 +9,20 @@ import java.nio.file.Path;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-import static com.amogus.YandexBackup.ARCHIVE_NAME;
+import static com.amogus.YandexBackupZipper.ARCHIVE_NAME;
 import static java.lang.String.format;
 import static java.nio.file.Files.createDirectories;
 import static java.nio.file.Files.createFile;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-class YandexBackupTest {
+class YandexBackupZipperTest {
     private static final String TEST_FILE_NAME = "testFile.txt";
 
-    private YandexBackup underTest;
+    private YandexBackupZipper underTest;
 
     @BeforeEach
     void setUp() {
-        underTest = new YandexBackup();
+        underTest = new YandexBackupZipper();
     }
 
     @Test

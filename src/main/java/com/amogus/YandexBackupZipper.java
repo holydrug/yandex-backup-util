@@ -12,10 +12,11 @@ import java.util.zip.ZipOutputStream;
 
 import static java.lang.String.format;
 
-public class YandexBackup {
+public class YandexBackupZipper {
 
     public static final String ARCHIVE_NAME = "archive_%s.zip";
-    public static void zipFolder(Path sourceFolderPath, Path zipPath) throws IOException {
+
+    public void zipFolder(Path sourceFolderPath, Path zipPath) throws IOException {
         LocalDate currentDate = LocalDate.now();
         String isoDate = currentDate.format(DateTimeFormatter.BASIC_ISO_DATE);
 
