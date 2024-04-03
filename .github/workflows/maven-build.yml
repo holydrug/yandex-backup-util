@@ -13,5 +13,6 @@ jobs:
         run: mvn clean install --settings ~/creds/settings.xml
 
       - name: Deploy with Maven
-        if: success()
-        run: mvn deploy --settings ~/creds/settings.xml
+        if: github.event_name == 'release' && github.event.action == 'published'
+        run: mvn deploy -P release --settings ~/creds/settings.xml
+
