@@ -17,7 +17,7 @@ The releases are also available on [Maven Central Repository](https://central.so
 ## Usage
 
 ### OAUTH Token 
-to recieve token 👉👉👉👉 [yandex-token-getting-started](https://yandex.ru/dev/disk-api/doc/ru/concepts/quickstart#oauth)
+To recieve token 👉👉👉👉 [yandex-token-getting-started](https://yandex.ru/dev/disk-api/doc/ru/concepts/quickstart#oauth)
 
 ### Tool To upload zip
 ```java
