@@ -16,6 +16,9 @@ The releases are also available on [Maven Central Repository](https://central.so
 
 ## Usage
 
+### OAUTH Token 
+[yandex-token-getting-started](https://yandex.ru/dev/disk-api/doc/ru/concepts/quickstart#oauth)
+
 ### Tool To upload zip
 ```java
 YandexDiskUploader yandexDiskUploader = new YandexDiskUploader();
